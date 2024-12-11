@@ -1,15 +1,23 @@
 package src.ch01;
 
+import java.io.UnsupportedEncodingException;
+import java.util.Arrays;
+
 public class Demo {
     public static void main(String[] args) {
-        int data = 279;
-        int d1 = data / 100; // 2
-        System.out.println(d1);
-        int d2 = data % (100 / 10); // 7
-        System.out.println(d2);
-        int d3 = data % 10; // 9
-        System.out.println(d3);
-        int s = d1 + d2 + d3;
-        System.out.println("" + s);
+        String Str1 = "阿斯蒂芬干活";
+
+        try{
+            byte[] Str2 = Str1.getBytes();
+            System.out.println("返回值：" + Str2 );
+
+            Str2 = Str1.getBytes("UTF-8" );
+            System.out.println("返回值：" + Str2 );
+
+            Str2 = Str1.getBytes("ISO-8859-1" );
+            System.out.println("返回值：" + Str2 );
+        } catch ( UnsupportedEncodingException e){
+            System.out.println("不支持的字符集");
+        }
     }
 }
