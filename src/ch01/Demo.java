@@ -1,23 +1,21 @@
 package src.ch01;
 
+import src.string.StringUtilities;
+
 import java.io.UnsupportedEncodingException;
+import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 
 public class Demo {
     public static void main(String[] args) {
-        String Str1 = "阿斯蒂芬干活";
+        String str1 = "阿斯蒂芬干活";
+        System.out.println(Arrays.toString(str1.getBytes(StandardCharsets.UTF_8)).length());
 
-        try{
-            byte[] Str2 = Str1.getBytes();
-            System.out.println("返回值：" + Str2 );
+        String str2 = "123456";
+        System.out.println(StringUtilities.replace(str2, 2, 3, "000"));
+        System.out.println(StringUtilities.replace(str2, 8, 3, "000"));
+        System.out.println(StringUtilities.replace("", 1, 3, "000"));
 
-            Str2 = Str1.getBytes("UTF-8" );
-            System.out.println("返回值：" + Str2 );
 
-            Str2 = Str1.getBytes("ISO-8859-1" );
-            System.out.println("返回值：" + Str2 );
-        } catch ( UnsupportedEncodingException e){
-            System.out.println("不支持的字符集");
-        }
     }
 }
