@@ -5,6 +5,13 @@ public class Student {
     private String name; // 姓名
     private String answer; // 答案
 
+    private int score;
+    private float aver;;
+
+    public Student() {
+
+    }
+
     public Student(String id, String name, String answer) {
         this.id = id;
         this.name = name;
